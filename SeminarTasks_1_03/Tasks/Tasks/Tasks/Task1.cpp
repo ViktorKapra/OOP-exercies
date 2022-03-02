@@ -6,7 +6,15 @@ struct ElectricalSupply
 	double priceOfProduct;
 	double priceOfInstalation;
 	int luxuryClass;
-
+	ElectricalSupply(double _kWh, double _priceOfProduct,
+		double _priceOfInstalation, int _luxuryClass)
+	{
+		kWh = _kWh;
+		priceOfProduct = _priceOfProduct;
+		priceOfInstalation = _priceOfInstalation;
+		luxuryClass = _luxuryClass;
+	}
+	double getPriceOfProduct() { return priceOfProduct; }
 };
 double getKWh(ElectricalSupply e, float priceKWh)
 {
@@ -18,15 +26,48 @@ int getLuxuryClass(ElectricalSupply e)
 }
 struct Microwave :ElectricalSupply
 {
+	Microwave(double _kWh, double _priceOfProduct,
+		double _priceOfInstalation, int _luxuryClass)
+	:ElectricalSupply( _kWh, _priceOfProduct, _priceOfInstalation, _luxuryClass)
+	{ }
 };
+double getMicrowavePrice(Microwave m) { return m.getPriceOfProduct(); }
+
 struct Fridge : ElectricalSupply
-{};
+{
+	Fridge(double _kWh, double _priceOfProduct,
+		double _priceOfInstalation, int _luxuryClass)
+	:ElectricalSupply(_kWh, _priceOfProduct, _priceOfInstalation, _luxuryClass)
+	{ }
+};
+double getFridgePrice(Fridge m) { return m.getPriceOfProduct(); }
+
 struct Oven : ElectricalSupply
-{};
+{
+	Oven(double _kWh, double _priceOfProduct,
+		double _priceOfInstalation, int _luxuryClass)
+	:ElectricalSupply(_kWh, _priceOfProduct, _priceOfInstalation, _luxuryClass)
+	{ }
+};
+double getOvenPrice(Oven m) { return m.getPriceOfProduct(); }
+
 struct Aspirator : ElectricalSupply
-{};
+{
+	Aspirator(double _kWh, double _priceOfProduct,
+		double _priceOfInstalation, int _luxuryClass)
+	:ElectricalSupply(_kWh, _priceOfProduct, _priceOfInstalation, _luxuryClass)
+	{ }
+};
+double getAspiratorPrice(Aspirator m) { return m.getPriceOfProduct(); }
+
 struct FoodProcessor : ElectricalSupply
-{};
+{
+	FoodProcessor(double _kWh, double _priceOfProduct,
+		double _priceOfInstalation, int _luxuryClass)
+	:ElectricalSupply(_kWh, _priceOfProduct, _priceOfInstalation, _luxuryClass)
+	{ }
+};
+double getFoodProcessorPrice(FoodProcessor m) { return m.getPriceOfProduct(); }
 
 int main()
 {
@@ -39,4 +80,6 @@ int main()
 	<< getKWh(microwave, POWER_PRICE_KWH) + getKWh(fridge, POWER_PRICE_KWH) << std::endl;
 	std::cout << "Microwave luxury class :" << getLuxuryClass(microwave) << std::endl;
 	std::cout << "Fridge luxury class : " << getLuxuryClass(fridge) << std::endl;
+	std::cout << "Microwave price(" << (INCLUDES_INSTALLATION ? "including" : "excluding") << " installation) :" << getMicrowavePrice(microwave);
+	std::cout << "Fridge price(" << (INCLUDES_INSTALLATION ? "including" : "excluding") << " installation) :" << getFridgePrice(fridge);
 }
