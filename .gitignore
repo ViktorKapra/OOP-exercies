@@ -3,3 +3,25 @@
 ################################################################################
 
 /Practicum25_2/.vs/Practicum25_2/v16
+/Practicum25_2/Debug
+/Practicum25_2/zad2/Debug/zad2.tlog
+/.vs/ООП/v16/ipch/AutoPCH/5544237d7470d722
+*.sqlite
+/SeminarTasks_1_03/Tasks/Tasks/Tasks/Tasks.vcxproj.user
+*.filters
+*.tlog
+*.log
+*.vcxproj
+*.db
+*.db-shm
+*.opendb
+*.db-wal
+*.suo
+*.json
+*.recipe
+*.ilk
+*.obj
+*.idb
+*.pdb
+*.user
+*.ipch
