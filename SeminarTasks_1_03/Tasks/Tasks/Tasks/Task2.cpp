@@ -20,6 +20,10 @@ int IntArray::getElemFromIndex(int index)
 }
 void IntArray::add(int el)
 {
+	if (size >= 20)
+	{
+		std::cout << "ERROR" << std::endl;
+	}
 	elements[size] = el;
 	size++;
 }
@@ -52,7 +56,7 @@ void removeElemFromArray(IntArray* array, int index)
 	array->removeFromIndex(index);
 }
 
-int main()
+int main1()
 {
 	
 	IntArray array; addElemToArray(&array, 4);
@@ -63,5 +67,6 @@ int main()
 	removeElemFromArray(&array, 0);
 	std::cout<<getArraySize(&array)<<" "; //трябва да изведе 1
 	std::cout<<getArrayElem(&array, 0); //трябва да изведе 5
+	return 0;
 	
 }
