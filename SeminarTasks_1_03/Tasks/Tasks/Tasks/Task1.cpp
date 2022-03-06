@@ -20,7 +20,7 @@ double getKWh(ElectricalSupply &e, float priceKWh)
 {
 	return e.kWh * priceKWh;
 }
-int getLuxuryClass(ElectricalSupply &e)
+double getLuxuryClass(ElectricalSupply &e)
 {
 	return e.luxuryClass;
 }
@@ -69,7 +69,7 @@ struct FoodProcessor : ElectricalSupply
 };
 double getFoodProcessorPrice(FoodProcessor m) { return m.getFullPrice(); }
 
-int main()
+int main1()
 {
 	Microwave microwave = {1.0, 200.0, 0, 8};
 	Fridge fridge = {3, 500.0, 0.0, 8};
@@ -82,4 +82,5 @@ int main()
 	std::cout << "Fridge luxury class : " << getLuxuryClass(fridge) << std::endl;
 	std::cout << "Microwave price(" << (INCLUDES_INSTALLATION ? "including" : "excluding") << " installation) :" << getMicrowavePrice(microwave)<<std::endl;
 	std::cout << "Fridge price(" << (INCLUDES_INSTALLATION ? "including" : "excluding") << " installation) :" << getFridgePrice(fridge);
+	return 0;
 }
